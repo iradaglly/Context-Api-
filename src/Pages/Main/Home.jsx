@@ -64,7 +64,7 @@ const Home = () => {
                                     <Button variant="contained"
                                         onClick={() => {
                                             setBasket([...basket, product]);
-                                            toast.success(`${product.title} Successfully Add to Favorites!`)
+                                            toast.success(`${product.title} Successfully Added to Basket!`)
                                         }}
                                     
                                         style={{ display: "block", margin: "0 auto", backgroundColor: "#eab3b8" }}>Add to Basket</Button>
