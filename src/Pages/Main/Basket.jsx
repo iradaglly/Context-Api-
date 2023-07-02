@@ -1,7 +1,7 @@
 import { useBasketContext } from '../../Context/BasketContext';
 import { Button, Container, Typography } from "@mui/material";
 import Swal from "sweetalert2";
-
+import {Helmet} from "react-helmet";
 const Basket = () => {
     const { basket, setBasket } = useBasketContext();
   
@@ -29,6 +29,7 @@ const Basket = () => {
     }
     return (
         <Container>
+            <Helmet><title>Basket Page</title></Helmet>
              <div
            
         >

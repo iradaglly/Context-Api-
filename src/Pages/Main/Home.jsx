@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import { Toaster, toast } from "react-hot-toast";
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { useBasketContext } from '../../Context/BasketContext';
+import {Helmet} from "react-helmet";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -27,7 +28,10 @@ const Home = () => {
 
     }, [])
     return (
-        <Container style={{ paddingTop: "5%" }}>
+     
+        <Container style={{ paddingTop: "5%" }}>   <Helmet>
+            <title>Home Page</title>
+        </Helmet>
 
             <Grid container spacing={2}>
                 {
