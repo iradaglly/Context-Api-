@@ -1,57 +1,38 @@
 import { useBasketContext } from '../../Context/BasketContext';
-import { Button, Typography } from "@mui/material";
-import Swal from "sweetalert2"
+import { Button, Container, Typography } from "@mui/material";
+import Swal from "sweetalert2";
 
 const Basket = () => {
     const { basket, setBasket } = useBasketContext();
-
+  
     function handleClearBasket() {
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: 'btn btn-success',
-                cancelButton: 'btn btn-danger'
-            },
-            buttonsStyling: false
-        })
+        
 
-        swalWithBootstrapButtons.fire({
-            title: 'Are you sure to empty favorites?',
+        Swal.fire({
+            title: 'Are you sure?',
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
-            reverseButtons: true
-        }).then((result) => {
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
             if (result.isConfirmed) {
-                setBasket([]);
-                swalWithBootstrapButtons.fire(
-                    'Deleted!',
-                    'Your favorites has been cleared.',
-                    'success'
-                )
-            } else if (
-                result.dismiss === Swal.DismissReason.cancel
-            ) {
-                swalWithBootstrapButtons.fire(
-                    'Cancelled',
-                    'Your favorites is safe :)',
-                    'error'
-                )
+                setBasket([])
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
             }
-        })
+          })
     }
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-                height: "70vh",
-            }}
+        <Container>
+             <div
+           
         >
-            <div>
+            <div style={{paddingTop:"10%"}}>
                 <Typography align="center">
                     You Have {basket.length} products in your basket!
 
@@ -60,7 +41,10 @@ const Basket = () => {
                     Clear All?
                 </Button>
             </div>
-        </div>
+       
+        </div> 
+        </Container>
+      
 
     )
 }

@@ -34,11 +34,11 @@ const Home = () => {
                     product.map((product) => (
 
                         <Grid item xs={12} md={6} lg={4} style={{ marginBottom: "50px" }} >
-                            <Item><Card sx={{ maxWidth: 345 }}>
+                            <Item><Card sx={{ maxWidth: 365 }} style={{padding:"50px"}}>
                                 <CardActionArea>
                                     <CardMedia
                                         component="img"
-                                        height="140"
+                                        height="350"
                                         image={product.image}
                                         alt="green iguana"
                                     />
